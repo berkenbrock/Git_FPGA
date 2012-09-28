@@ -1,0 +1,42 @@
+############################################################################
+# TIMING CONSTRAINTS
+############################################################################
+NET "refclk" TNM_NET = refclk;
+TIMESPEC TS_refclk = PERIOD "refclk" 8 ns HIGH 50%;
+
+############################################################################
+# PLACEMENT CONSTRAINTS
+############################################################################
+## GTX
+INST gtx_dual_inst LOC=GTX_DUAL_X0Y3;
+INST refclk_ibufds_inst LOC=BUFDS_X0Y3;
+
+############################################################################
+# PINS CONSTRAINTS
+############################################################################
+## SFP
+NET SFP1_CTRL_RX_LOS       IOSTANDARD = LVCMOS33;
+NET SFP1_CTRL_TX_DISABLE   IOSTANDARD = LVCMOS33;
+NET SFP1_CTRL_TX_FAULT     IOSTANDARD = LVCMOS33;
+NET SFP1_1MGT_MOD_DETECT   IOSTANDARD = LVCMOS33;
+NET SFP1_1MGT_SCL          IOSTANDARD = LVCMOS33;
+NET SFP1_1MGT_SDA          IOSTANDARD = LVCMOS33;
+NET SFP1_CTRL_RX_LOS       LOC = U25;
+NET SFP1_CTRL_TX_DISABLE   LOC = Y25;
+NET SFP1_CTRL_TX_FAULT     LOC = Y26;
+NET SFP1_1MGT_MOD_DETECT   LOC = V26;
+NET SFP1_1MGT_SCL          LOC = W25;
+NET SFP1_1MGT_SDA          LOC = W26;
+
+NET SFP2_CTRL_RX_LOS       IOSTANDARD = LVCMOS33;
+NET SFP2_CTRL_TX_DISABLE   IOSTANDARD = LVCMOS33;
+NET SFP2_CTRL_TX_FAULT     IOSTANDARD = LVCMOS33;
+NET SFP2_1MGT_MOD_DETECT   IOSTANDARD = LVCMOS33;
+NET SFP2_1MGT_SCL          IOSTANDARD = LVCMOS33;
+NET SFP2_1MGT_SDA          IOSTANDARD = LVCMOS33;
+NET SFP2_CTRL_RX_LOS       LOC = P26;
+NET SFP2_CTRL_TX_DISABLE   LOC = T25;
+NET SFP2_CTRL_TX_FAULT     LOC = U26;
+NET SFP2_1MGT_MOD_DETECT   LOC = P25;
+NET SFP2_1MGT_SCL          LOC = R26;
+NET SFP2_1MGT_SDA          LOC = R25;
